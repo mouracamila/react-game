@@ -4,7 +4,7 @@ import './index.css';
 
 function Square(props) {
     return (
-        <button className="square" onClick={props.onClick}>
+        <button className="square btn btn-light" onClick={props.onClick}>
             {props.value}
         </button>
     );
@@ -81,11 +81,11 @@ class Game extends React.Component {
 
         const moves = history.map((step, move) => {
             const desc = move ?
-                'Go to move #' + move :
+                'Go to move ' + move :
                 'Go to game start';
             return (
                 <li key={move}>
-                    <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                    <button className=" btn btn-warning" onClick={() => this.jumpTo(move)}>{desc}</button>
                 </li>
             );
         });
@@ -110,7 +110,7 @@ class Game extends React.Component {
                 <ol>{moves}</ol>
             </div>
             </div>
-      );
+        );
     }
 }
 
